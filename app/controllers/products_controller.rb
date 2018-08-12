@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :category_order, only: [:index, :show, :edit, :new]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /products
   # GET /products.json
@@ -69,6 +71,14 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.fetch(:product, {})
+      params.require(:product).permit(:name, :price, :image, category_id, :description)
     end
+    
+    #category
+    
+    def category_order
+      @categories = Category.all.order("created_at desc")
+    end
+    
+    
 end

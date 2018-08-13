@@ -29,6 +29,12 @@ class CategoriesController < ApplicationController
     end
   end
   
+  def electronics
+  end
+  
+  def home
+  end
+  
   def update
     @category = Category.new(category_params)
     

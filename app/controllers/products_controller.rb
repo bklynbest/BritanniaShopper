@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :category_order, only: [:index, :show, :edit, :new]
+  before_action :products_order, only: [:index, :show]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /products
@@ -33,7 +34,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new }
+        format.html { render :new, notice: "Product could not be saved" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -47,7 +48,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
+        format.html { render :edit, notice:"Product could not be updated" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -71,7 +72,11 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :price, :image, category_id, :description)
+      params.require(:product).permit(:name, :price, :image, :category_id, :description)
+    end
+    
+    def products_order
+      @products = Product.all.order("created_at desc")
     end
     
     #category
@@ -79,6 +84,4 @@ class ProductsController < ApplicationController
     def category_order
       @categories = Category.all.order("created_at desc")
     end
-    
-    
 end

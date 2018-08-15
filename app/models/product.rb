@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
     has_many :orders
-    mount_uploader :image, ImageUploader
-    belongs_to :categories
+    belongs_to :category
     validates :name, :price, presence: true
+    mount_uploader :image, ImageUploader
 end

@@ -7,12 +7,16 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @products = Product.where("category_id = ?", @product.id)
+    @products = Product.where("category_id = ?", @category.id)
     @categories = Category.all
   end
   
   def new
-    @catgories = Category.new
+    @category = Category.new
+  end
+  
+  def edit
+    
   end
   
   def create
@@ -65,7 +69,7 @@ class CategoriesController < ApplicationController
   end
   
   def category_params
-    params.require(:category).permit(:title)
+    params.require(:category).permit(:name)
   end
   
 end

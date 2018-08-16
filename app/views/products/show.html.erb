@@ -1,13 +1,10 @@
-<% @products.each do |product| %>
+
 <hr />
-  <%= product.name %>
+  <%= @product.name %>
   <hr />
-  <%= product.description %>
+  <%= @product.description %>
   <hr />
-  <%= image_tag product.image, width:"20%" %>
-
-
-<% end %>
-
+  <%= image_tag @product.image, width:"50%" %>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+

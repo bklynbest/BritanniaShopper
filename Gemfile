@@ -27,6 +27,8 @@ gem 'devise'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem "mini_magick"
+gem "font-awesome-rails"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

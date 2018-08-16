@@ -2,5 +2,6 @@
 
 <% @products.each do |product| %>
     <p><%= image_tag product.image, width:"20%" %></p>
+    <td><%= link_to product.category.name, product.category %></td>
     <%= link_to 'Show', product %>
 <% end %>

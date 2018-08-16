@@ -36,6 +36,12 @@ class CategoriesController < ApplicationController
   def electronics
   end
   
+  def clothing
+  end
+  
+  def lifestyle
+  end
+  
   def home
   end
   

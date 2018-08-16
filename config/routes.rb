@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :products
   resources :categories 
   get 'electronics' => 'categories#electronics'
+  get 'lifestyle' => 'categories#home'
+  get 'clothing' => 'categories#lifestyle'
+  get 'home' => 'categories#home'
   devise_for :users
   root 'home#index'
 

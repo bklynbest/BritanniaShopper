@@ -1,22 +1,21 @@
-<div class="container">
+<% @products.each_slice(3) do |product| %>
   <div class="row">
-    <% @products.each do |product| %>
-	  <div class="col-xs-18 col-sm-4 col-md-3 space">
-		  <div class="productbox">
-			  <div class="imgthumb img-responsive">
-			    <%= link_to product_path(product) do %>
-				  <p><%= image_tag product.image %></p>
-			  </div>
-			  <div class="caption">
-			    <div class="container">
-            <div class="random btn btn-success" data-toggle="collapse"><%= product.name %></div>
+    <% product.each do |product| %>
+      <div class="col-md-4">
+        <div class="recipe">
+          <div class="image_wrapper">
+            <%= link_to product do %>
+              <%= image_tag product.image, width:'200px', height:'200px', class:'recipe_image' %>
             <% end %>
-            <div class="random btn btn-info float-right" data-toggle="collapse"><%= product.category.name %></div>
+          <h2 class="float-left">
+            <%= link_to product.name, product %>
+          </h2>
+          <h2 class="float-right"><%= link_to product.category.name %></h2>
           </div>
         </div>
-			</div>
-		</div>
-		<% end %>
-	</div>
-	<%= link_to "nEW", new_product_path %>
-</div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>
+<%= link_to 'Back to Top', products_path, class: 'btn btn-primary' %>

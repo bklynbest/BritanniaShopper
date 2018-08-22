@@ -1,5 +1,9 @@
-.recipe {
+.product {
   margin-top: 3em;
+}
+
+.top_marg {
+  margin-top: 2em;
 }
 
 .fb_image {
@@ -7,4 +11,30 @@
     height: 2em;
     width: 2em;
     border-radius: 50%;
+}
+
+.home_image {
+  background-size: cover;
+  height: 100% ;
+  width: 100%;
+  position: relative;
+}
+
+.home {
+  background-color: thistle;
+}
+
+.lifestyle {
+  background-color: gray;
+}
+
+.centered {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home_page_bg {
+  background-color: gainsboro;
 }

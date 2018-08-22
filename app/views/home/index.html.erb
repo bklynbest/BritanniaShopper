@@ -1,21 +1,50 @@
-<% @products.each_slice(3) do |product| %>
-  <div class="row">
-    <% product.each do |product| %>
-      <div class="col-md-4">
-        <div class="recipe">
-          <div class="image_wrapper">
-            <%= link_to product do %>
-              <%= image_tag product.image, width:'200px', height:'200px', class:'recipe_image' %>
-            <% end %>
-          <h2 class="float-left">
-            <%= link_to product.name, product %>
-          </h2>
-          <h2 class="float-right"><%= link_to product.category.name %></h2>
-          </div>
+<div id= "home_page_bg">
+  <div class="container top_marg">
+    <div class="lifestyle">
+      <div class="row">
+        <div class="col-md-6">
+          <%= link_to lifestyle_path do %>
+          <%= image_tag 'lifestyle.jpg', class: "home_image img-responsive" %>
+          <% end %>
+        </div>
+        <div class="col-md-4 offset-2">
+          <h1 class="centered">
+            <%= link_to "Lifestyle", lifestyle_path %>
+          </h1>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
-<% end %>
-<%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>
-<%= link_to 'Back to Top', root_path, class: 'btn btn-primary' %>
+  <div class="container top_marg">
+    <div class="home">
+      <div class="row">
+        <div class="col-md-4 offset-2">
+          <h1 class="centered">
+            <%= link_to "Home", home_path %>
+          </h1>
+        </div>
+        <div class="col-md-6">
+          <%= link_to home_path do %>
+          <%= image_tag 'home1.jpg', class: "home_image img-responsive" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container top_marg">
+    <div class="lifestyle">
+      <div class="row">
+        <div class="col-md-6">
+          <%= link_to electronics_path do %>
+          <%= image_tag 'electonics.jpg', class: "home_image img-responsive" %>
+          <% end %>
+        </div>
+        <div class="col-md-4 offset-2">
+          <h1 class="centered">
+            <%= link_to "Electronics", electronics_path %>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>

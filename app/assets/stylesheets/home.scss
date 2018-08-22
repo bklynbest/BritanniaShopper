@@ -28,29 +28,18 @@
   background-color: gray;
 }
 
-.centered {
+.category-title {
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.category-text {
+.center-category-text {
     text-align: center;  
 }
-
-.centered_electronics {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.centeredhome {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#home-landingpage-category {
+  margin-left: auto;
 }
 
 #home_page_bg {

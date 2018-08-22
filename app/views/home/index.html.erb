@@ -7,23 +7,24 @@
           <%= image_tag 'lifestyle.jpg', class: "home_image img-responsive" %>
           <% end %>
         </div>
-        <div class="col-md-4 category-text">
-          <h1 class="centered">
+        <div class="col-md-4 center-category-text">
+          <h1 class="category-title">
             <%= link_to "Lifestyle", lifestyle_path %>
           </h1>
         </div>
       </div>
     </div>
   </div>
+  
   <div class="container top_marg">
     <div class="home">
       <div class="row">
-        <div class="col-md-4 category-text">
-          <h1 class="centeredhome">
+        <div class="col-md-4 center-category-text">
+          <h1 class="category-title">
             <%= link_to "Home", home_path %>
           </h1>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" id= "home-landingpage-category">
           <%= link_to home_path do %>
           <%= image_tag 'home1.jpg', class: "home_image img-responsive" %>
           <% end %>
@@ -31,6 +32,8 @@
       </div>
     </div>
   </div>
+  
+  
   <div class="container top_marg">
     <div class="electronics">
       <div class="row">
@@ -39,8 +42,8 @@
           <%= image_tag 'electonics.jpg', class: "home_image img-responsive" %>
           <% end %>
         </div>
-        <div class="col-md-4 category-text">
-          <h1 class="centered_electronics">
+        <div class="col-md-4 center-category-text">
+          <h1 class="category-title">
             <%= link_to "Electronics", electronics_path %>
           </h1>
         </div>

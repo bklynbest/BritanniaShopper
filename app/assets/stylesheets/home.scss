@@ -35,6 +35,25 @@
     transform: translate(-50%, -50%);
 }
 
+.category-text {
+    text-align: center;  
+}
+
+.centered_electronics {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centeredhome {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #home_page_bg {
   background-color: gainsboro;
+  padding: .5em;
 }
